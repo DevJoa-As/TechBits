@@ -92,7 +92,13 @@ def obtener_productos():
     productos = [{'id': r[0], 'nombre': r[1], 'precio': r[2], 'descripcion': r[3]} for r in rows]
     return jsonify(productos)
 
-if __name__ == '__main__':
+# Llamamos a init_db() directamente para que Render cree las tablas al arrancar el servidor
+try:
     init_db()
+    print("Base de datos inicializada correctamente.")
+except Exception as e:
+    print(f"Error inicializando la base de datos: {e}")
+
+if __name__ == '__main__':
     print("Servidor backend de TechBits corriendo en http://127.0.0.1:5000 con Supabase")
     app.run(debug=True)
