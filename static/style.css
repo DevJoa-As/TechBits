@@ -455,3 +455,20 @@ footer { background: #060911; border-top: 1px solid var(--border-color); padding
     .menu-toggle { display: block; }
     .demo-card, .contact-container, .company-detail-grid { grid-template-columns: 1fr; }
 }
+/* Fuerza bruta temporal para verificar el elemento */
+@media (max-width: 768px) {
+    .sim-input-group {
+        display: flex !important;
+        flex-direction: column !important;
+        position: relative !important;
+        width: 100% !important;
+    }
+    
+    .btn-simular {
+        position: relative !important;
+        right: auto !important;
+        left: auto !important;
+        width: 100% !important;
+        margin-top: 10px !important;
+    }
+}
